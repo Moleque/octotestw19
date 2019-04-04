@@ -7,9 +7,9 @@ import letters from '../../steps/letters';
 describe('test id', () => {
 	it('Авторизоваться и открыть первое письмо на странице', () => {
 		main.open('https://mail.ru');
-		main.login('ydzhonson@inbox.ru', 'Q-r6a0kwTKrC'); // так не надо ))
+		main.login(process.env.LOGIN, process.env.PASSWORD);
 		layout.setPaneAndSize(3);
 		folders.clickFolderByName('Входящие');
-		letters.openBySubject('Оцените Почту – помогите нам стать лучше!'); // 
+		letters.openBySubject('К вашему почтовому ящику привязан новый телефон!');
 	});
 });
