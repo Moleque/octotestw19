@@ -6,7 +6,7 @@ class ToolbarPage extends DefaultPage {
 	}
 
 	get locators() {
-		const container = '[data-qa-id="compose-app"] [data-qa-id="editor-toolbar"]';
+		const container = '[data-qa-id="compose-app"] div[data-test-id="editor-toolbar"]';
 		return {
 			container,
 			toolById: (toolId) => container + ` div[data-test-id="${toolId}"]`
@@ -18,7 +18,7 @@ class ToolbarPage extends DefaultPage {
 	 * @param {string} toolId
 	 */
 	clickToolById(toolId) {
-		const locator = this.locators.container; //toolById(toolId);
+		const locator = this.locators.toolById(toolId);
 		this.page.waitForVisible(locator);
 		this.page.click(locator);
 	}
