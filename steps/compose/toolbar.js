@@ -6,8 +6,16 @@ class ToolbarSteps extends DefaultSteps {
 		super(page);
 	}
 
-	clickToolById(toolId) {
-		this.page.clickToolById(toolId);
+	clickToolByName(toolName) {
+		this.page.clickToolByName(toolName);
+	}
+
+	setColor(toolName, colorName) {
+		this.page.setColor(toolName, colorName);
+	}
+
+	setParamListItem(toolName, itemName) {
+		this.page.setParamListItem(toolName, itemName);
 	}
 
 }

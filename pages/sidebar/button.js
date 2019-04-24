@@ -6,10 +6,10 @@ class ButtonPage extends DefaultPage {
 	}
 
 	get locators() {
-		const container = '[data-qa-id="sidebar"]';
+		const container = '.sidebar';
 		return {
 			container,
-			buttonById: (buttonId) => container + ` [data-qa-id="${buttonId}"]`
+			buttonById: (buttonId) => container + ` .${buttonId}`
 		}
 	}
 

@@ -6,7 +6,7 @@ class EditorPage extends DefaultPage {
 	}
 
 	get locators() {
-		const container = '[data-qa-id="compose-app"] div[tabindex="505"]';
+		const container = '.compose-app div[tabindex="505"]';
 		return {
 			container,
 		}

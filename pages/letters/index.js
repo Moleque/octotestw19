@@ -6,21 +6,17 @@ class LettersPage extends DefaultPage {
 	}
 
 	get locators () {
-		const container = '[data-qa-id="dataset-letters"]';
+		const container = '.dataset__items';
 
 		return {
 			container,
-			letterBySubject: (subject) => {
-				// subject = subject === '' ? '<Без темы>' : subject.replace('"', '\\"');
-
-				return `${this.locators.container} [data-qa-id="letter-item:subject:${subject}"]`;
-			}
+			letterBySubject: (subject) => `${this.locators.container} [title="${subject}"]`,
+			// firstAttachment: () => `.attach-list .attach-thumb:nth-child(1)`,
 		}
 	}
 
 	/**
 	 * Проверяет есть ли письмо с темой
-	 *
 	 * @param {string} subject
 	 * @param {boolean} reverse
 	 * @returns {boolean}
