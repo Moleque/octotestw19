@@ -6,8 +6,8 @@ class ButtonSteps extends DefaultSteps {
 		super(page);
 	}
 
-	clickButton(buttonId) {
-		this.page.clickButton(buttonId);
+	clickButton(buttonName) {
+		this.page.clickButton(buttonName);
 	}
 	
 }

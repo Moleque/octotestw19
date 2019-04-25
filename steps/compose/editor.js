@@ -18,6 +18,10 @@ class EditorSteps extends DefaultSteps {
 		return this.page.readText();
 	}
 
+	selectText() {
+		this.page.selectText();
+	}
+
 	readHtmlContent() {
 		return this.page.readHtmlContent();
 	}

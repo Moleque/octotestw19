@@ -6,9 +6,9 @@ class EditorPage extends DefaultPage {
 	}
 
 	get locators() {
-		const container = '.compose-app div[tabindex="505"]';
+        const container = '.compose-app div[tabindex="505"]';
 		return {
-			container,
+            container,
 		}
 	}
 
@@ -38,6 +38,15 @@ class EditorPage extends DefaultPage {
         const locator = this.locators.container;
         this.page.waitForVisible(locator);
         return $(locator).getText();
+    }
+
+    /**
+     * Выделение содержимого текста письма
+     */
+    selectText() {
+        const locator = this.locators.container;
+        this.page.waitForVisible(locator);
+        $(locator).doubleClick();
     }
 
     /**

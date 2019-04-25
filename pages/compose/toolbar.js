@@ -31,12 +31,12 @@ class ToolbarPage extends DefaultPage {
 	}
 
 	get locators() {
-		const container = '.compose-app'; //  div[id^="editor"] div[id^="container"]';
+		const container = '.compose-app div[class^="editor"] div[class^="container"]';
 		return {
 			container,
 			toolByName: (toolName) => container + ` button[title="${toolName}"]`,
-			colorByName: (colorName) => container + ` .datalist div[style="background-color: rgb(${colors[colorName]});"]`,
-			listItemByName: (itemName) => container + ` .datalist =${itemName}`,
+			colorByName: (colorName) => container + ` div[class^="datalist--"] div[style="background-color: rgb(${colors[colorName]});"]`,
+			listItemByName: (itemName) => container + ` div[class^="datalist_visible--"] span=${itemName}`,
 		}
 	}
 

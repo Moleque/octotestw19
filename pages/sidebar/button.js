@@ -9,16 +9,16 @@ class ButtonPage extends DefaultPage {
 		const container = '.sidebar';
 		return {
 			container,
-			buttonById: (buttonId) => container + ` .${buttonId}`
+			buttonByName: (buttonName) => container + ` span[title="${buttonName}"]`
 		}
 	}
 
 	/**
-	 * Клик по кнопке создания нового письма
-	 * @param {string} buttonId
+	 * Клик по кнопке сайдбара
+	 * @param {string} buttonName
 	 */
-	clickButton(buttonId) {
-		const locator = this.locators.buttonById(buttonId);
+	clickButton(buttonName) {
+		const locator = this.locators.buttonByName(buttonName);
 		this.page.waitForVisible(locator);
 		this.page.click(locator);
 	}
