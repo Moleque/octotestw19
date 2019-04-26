@@ -11,7 +11,7 @@ class TranslatorPage extends DefaultPage {
             container,
             closeButton: () => container + ` div[class^="cancelTranslation--"]`,
             containerByName: (containerName) => container + ` div[class^="${containerName}Container--"]`,
-            scrollByName: (scrollName) => container + ` div[class^="${scrollName}Scrollable--"]`,
+            scrollByName: (scrollName) => container + ` div[class^="${scrollName}Scrollable--"] div`,
 		}
     }
 
@@ -22,6 +22,7 @@ class TranslatorPage extends DefaultPage {
     readText(scrollName) {
         const locator = this.locators.scrollByName(scrollName);
         this.page.waitForVisible(locator);
+        // дождаться появления перевода
         return $(locator).getText();
     }
 

@@ -75,37 +75,37 @@ describe('Тестирование панели инструментов в на
 
 	// -------------------
 
-	it('В написании письма использовать выбор типа шрифта текста', () => {
-		toolbar.clickToolByName('Шрифт');
-		toolbar.chooseListItem('Программный код');
-		editor.writeText(testText);
-		const readedContent = editor.readHtmlContent();
-		// assert.equal(readedContent, `<div><s>​​​​​​​${testText}</s><br></div>`);
-	});
+	// it('В написании письма использовать выбор типа шрифта текста', () => {
+	// 	toolbar.clickToolByName('Шрифт');
+	// 	toolbar.chooseListItem('Программный код');
+	// 	editor.writeText(testText);
+	// 	const readedContent = editor.readHtmlContent();
+	// 	// assert.equal(readedContent, `<div><s>​​​​​​​${testText}</s><br></div>`);
+	// });
 
-	it('В написании письма использовать выравнивание текста', () => {
-		toolbar.clickToolByName('Выравнивание');
-		toolbar.chooseListItem('По центру');
-		editor.writeText(testText);
-		const readedContent = editor.readHtmlContent();
-		// assert.equal(readedContent, `<div><s>​​​​​​​${testText}</s><br></div>`);
-	});
+	// it('В написании письма использовать выравнивание текста', () => {
+	// 	toolbar.clickToolByName('Выравнивание');
+	// 	toolbar.chooseListItem('По центру');
+	// 	editor.writeText(testText);
+	// 	const readedContent = editor.readHtmlContent();
+	// 	// assert.equal(readedContent, `<div><s>​​​​​​​${testText}</s><br></div>`);
+	// });
 
-	it('В написании письма использовать отступ текста', () => {
-		toolbar.clickToolByName('Отступ');
-		toolbar.chooseListItem('Увеличить отступ');
-		editor.writeText(testText);
-		const readedContent = editor.readHtmlContent();
-		// assert.equal(readedContent, `<div><s>​​​​​​​${testText}</s><br></div>`);
-	});
+	// it('В написании письма использовать отступ текста', () => {
+	// 	toolbar.clickToolByName('Отступ');
+	// 	toolbar.chooseListItem('Увеличить отступ');
+	// 	editor.writeText(testText);
+	// 	const readedContent = editor.readHtmlContent();
+	// 	// assert.equal(readedContent, `<div><s>​​​​​​​${testText}</s><br></div>`);
+	// });
 
-	it('В написании письма использовать создание списка', () => {
-		toolbar.clickToolByName('Список');
-		toolbar.chooseListItem('Нумерованный');
-		editor.writeText(testText);
-		const readedContent = editor.readHtmlContent();
-		// assert.equal(readedContent, `<div><s>​​​​​​​${testText}</s><br></div>`);
-	});
+	// it('В написании письма использовать создание списка', () => {
+	// 	toolbar.clickToolByName('Список');
+	// 	toolbar.chooseListItem('Нумерованный');
+	// 	editor.writeText(testText);
+	// 	const readedContent = editor.readHtmlContent();
+	// 	// assert.equal(readedContent, `<div><s>​​​​​​​${testText}</s><br></div>`);
+	// });
 
 	// -------------------
 
@@ -136,22 +136,22 @@ describe('Тестирование панели инструментов в на
 	});
 
 	it('В написании письма использовать перевод текста', () => {
-		const translation = `<div><div><div><div><div><div>тестирование</div></div></div></div></div></div>`
+		const translation = `тестирование`;
 		editor.writeText(testText);
 		toolbar.clickToolByName('Перевести письмо');
 		const readedText = translator.readText('translation');
-		assert.equal(readedText, translation);
 		translator.closeTranslationWindow();
+		assert.equal(readedText, translation);
 	});
 
-	it('В написании письма использовать очистку форматирования', () => {
-		toolbar.clickToolByName('Жирный текст');
-		editor.writeText(testText);
-		editor.selectText();
-		toolbar.clickToolByName('Очистить форматирование');
-		const readedContent = editor.readHtmlContent();
-		assert.equal(readedContent, `<div><s>​​​​​​​${testText}</s><br></div>`);
-	});
+	// it('В написании письма использовать очистку форматирования', () => {
+	// 	editor.writeText(testText);
+	// 	editor.selectText();
+	// 	toolbar.clickToolByName('Жирный текст');
+	// 	toolbar.clickToolByName('Очистить форматирование');
+	// 	const readedContent = editor.readHtmlContent();
+	// 	assert.equal(readedContent, `<div><s>​​​​​​​${testText}</s><br></div>`);
+	// });
 
 });
 

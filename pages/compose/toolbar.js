@@ -36,7 +36,7 @@ class ToolbarPage extends DefaultPage {
 			container,
 			toolByName: (toolName) => container + ` button[title="${toolName}"]`,
 			colorByName: (colorName) => container + ` div[class*="datalist_visible--"] div[style="background-color: rgb(${colors[colorName]});"]`,
-			listItemByName: (itemName) => container + ` div[class*="datalist_visible"] span=${itemName}`,
+			listItemByName: (itemName) => container + ` div[class*="datalist_visible--"] //span[contains(text(), "${itemName}")]`,
 			inputByToolName: (toolName) => container + ` button[title="${toolName}"] input`,
 		}
 	}
