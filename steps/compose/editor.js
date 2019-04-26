@@ -30,6 +30,10 @@ class EditorSteps extends DefaultSteps {
 		this.page.addLink(linkUrl, linkText);
 	}
 
+	isImage() {
+		return this.page.isImage();
+	}
+
 }
 
 export default new EditorSteps();

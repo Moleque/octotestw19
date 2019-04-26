@@ -11,7 +11,7 @@ class EditorPage extends DefaultPage {
             container,
             linkInputByName: (inputName) => `.compose-app div[class^="editable-container-"] input[name="${inputName}"]`,
             linkButtonByType: (buttonType) => `.compose-app div[class^="editable-container-"] button[type="${buttonType}"]`,
-
+            editorImage: () => container + ` img`
 		}
 	}
 
@@ -77,6 +77,14 @@ class EditorPage extends DefaultPage {
         const buttonLocator = this.locators.linkButtonByType('submit');
         this.page.waitForVisible(buttonLocator);
         this.page.click(buttonLocator);
+    }
+
+    /**
+     * Проверка наличия изображения в письме
+     */
+	isImage() {
+        const locator = this.locators.container;
+        return $(locator).isDisplayed();        
     }
 
 }

@@ -110,15 +110,14 @@ describe('Тестирование панели инструментов в на
 		toolbar.clickToolByName('Вставить ссылку');
 		editor.addLink(linkUrl, testText);
 		const readedContent = editor.readHtmlContent();
-		assert.equal(readedContent, `<div><a href="https://vk.com/moleque" data-cke-saved-href="https://vk.com/moleque">testing</a><br></div>`);
+		assert.equal(readedContent, `<div><a href="${linkUrl}" data-cke-saved-href="${linkUrl}">${testText}</a><br></div>`);
 	});
 
 	it('В написании письма использовать вставку картинки', () => {
 		const imagePath = '/home/moleque/test.jpg';
 		toolbar.addImageToEditor(imagePath);
-		const readedContent = editor.readHtmlContent();
-		// const readedContent = editor.readHtmlContent();
-		// assert.equal(readedContent, `<div><s>​​​​​​​${testText}</s><br></div>`);
+		const isImage = editor.isImage();
+		assert.equal(isImage, true);
 	});
 
 	it('В написании письма использовать перевод текста', () => {
