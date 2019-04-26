@@ -18,6 +18,10 @@ class ToolbarSteps extends DefaultSteps {
 		this.page.setParamListItem(toolName, itemName);
 	}
 
+	addImageToEditor(imagePath) {
+		this.page.addImageToEditor(imagePath);
+	}
+
 }
 
 export default new ToolbarSteps();

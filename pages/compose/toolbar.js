@@ -37,6 +37,7 @@ class ToolbarPage extends DefaultPage {
 			toolByName: (toolName) => container + ` button[title="${toolName}"]`,
 			colorByName: (colorName) => container + ` div[class^="datalist--"] div[style="background-color: rgb(${colors[colorName]});"]`,
 			listItemByName: (itemName) => container + ` div[class^="datalist_visible--"] span=${itemName}`,
+			inputByToolName: (toolName) => container + ` button[title="${toolName}"] input`,
 		}
 	}
 
@@ -88,6 +89,12 @@ class ToolbarPage extends DefaultPage {
 	setParamListItem(toolName, itemName) {
 		this.clickToolByName(toolName);
 		this.chooseListItem(itemName);
+	}
+
+	addImageToEditor(imagePath) {
+		const toolName = 'Вставить картинку';
+		const locator = this.locators.inputByToolName(toolName);
+		this.page.chooseFile(locator, imagePath);
 	}
 
 }

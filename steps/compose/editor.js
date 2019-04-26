@@ -26,6 +26,10 @@ class EditorSteps extends DefaultSteps {
 		return this.page.readHtmlContent();
 	}
 
+	addLink(linkUrl, linkText) {
+		this.page.addLink(linkUrl, linkText);
+	}
+
 }
 
 export default new EditorSteps();
