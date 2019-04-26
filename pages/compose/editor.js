@@ -84,7 +84,7 @@ class EditorPage extends DefaultPage {
      */
 	isImage() {
         const locator = this.locators.container;
-        return $(locator).isDisplayed();        
+        return this.page.waitForVisible(locator);;
     }
 
 }

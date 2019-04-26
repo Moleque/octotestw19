@@ -31,12 +31,12 @@ class ToolbarPage extends DefaultPage {
 	}
 
 	get locators() {
-		const container = '.compose-app div[class^="editor"] div[class^="container"]';
+		const container = '.compose-app div[class^="editor-"]';
 		return {
 			container,
 			toolByName: (toolName) => container + ` button[title="${toolName}"]`,
-			colorByName: (colorName) => container + ` div[class^="datalist--"] div[style="background-color: rgb(${colors[colorName]});"]`,
-			listItemByName: (itemName) => container + ` div[class^="datalist_visible--"] span=${itemName}`,
+			colorByName: (colorName) => container + ` div[class*="datalist_visible--"] div[style="background-color: rgb(${colors[colorName]});"]`,
+			listItemByName: (itemName) => container + ` div[class*="datalist_visible--"] span="${itemName}"`,
 			inputByToolName: (toolName) => container + ` button[title="${toolName}"] input`,
 		}
 	}
@@ -52,7 +52,7 @@ class ToolbarPage extends DefaultPage {
 	}
 
 	/**
-	 * Выбор цвета текста в панеле цветов
+	 * Выбор цвета текста для текущего инструмента
 	 * @param {string} colorName 
 	 */
 	chooseColor(colorName) {
@@ -62,17 +62,7 @@ class ToolbarPage extends DefaultPage {
 	}
 
 	/**
-	 * Выбор цвета текста для определенного инструмента
-	 * @param {string} toolName
-	 * @param {string} colorName 
-	 */
-	setColor(toolName, colorName) {
-		this.clickToolByName(toolName);
-		this.chooseColor(colorName);
-	}
-
-	/**
-	 * Выбор пункта из выпадающего списка по названию
+	 * Установить параметр текущего выпадающего списка
 	 * @param {string} itemName 
 	 */
 	chooseListItem(itemName) {
@@ -82,15 +72,9 @@ class ToolbarPage extends DefaultPage {
 	}
 
 	/**
-	 * Установить параметр с выпадающим списком выпадающего списка
-	 * @param {string} toolName
-	 * @param {string} itemName 
+	 * Вставить картинку по пути imagePath с помощью инструмента
+	 * @param {string} imagePath 
 	 */
-	setParamListItem(toolName, itemName) {
-		this.clickToolByName(toolName);
-		this.chooseListItem(itemName);
-	}
-
 	addImageToEditor(imagePath) {
 		const toolName = 'Вставить картинку';
 		const locator = this.locators.inputByToolName(toolName);

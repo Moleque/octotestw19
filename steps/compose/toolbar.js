@@ -10,12 +10,12 @@ class ToolbarSteps extends DefaultSteps {
 		this.page.clickToolByName(toolName);
 	}
 
-	setColor(toolName, colorName) {
-		this.page.setColor(toolName, colorName);
+	chooseColor(colorName) {
+		this.page.chooseColor(colorName);
 	}
 
-	setParamListItem(toolName, itemName) {
-		this.page.setParamListItem(toolName, itemName);
+	chooseListItem(itemName) {
+		this.page.chooseListItem(itemName);
 	}
 
 	addImageToEditor(imagePath) {
