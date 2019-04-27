@@ -26,6 +26,10 @@ class EditorSteps extends DefaultSteps {
 		return this.page.readHtmlContent();
 	}
 
+	readCSSProperty(propertyName) {
+		return this.page.readCSSProperty(propertyName);
+	}
+
 	addLink(linkUrl, linkText) {
 		this.page.addLink(linkUrl, linkText);
 	}

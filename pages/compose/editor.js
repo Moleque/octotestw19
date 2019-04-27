@@ -62,6 +62,16 @@ class EditorPage extends DefaultPage {
     }
 
     /**
+     * Считать CSS параметр
+     * @param {string} propertyName 
+     */
+	readCSSProperty(propertyName) {
+        const locator = this.locators.container;
+        this.page.waitForVisible(locator);
+        return $(locator).getCssProperty(propertyName)['parsed'];
+    }
+
+    /**
      * Добавить ссылку с адресом linkUrl и названием linkText
      * @param {string} linkUrl 
      * @param {string} linkText 
