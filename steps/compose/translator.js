@@ -8,11 +8,11 @@ class TranslatorSteps extends DefaultSteps {
 
 	readText(scrollName) {
 		return this.page.readText(scrollName);
-    }
-    
-    closeTranslationWindow() {
-        this.page.closeTranslationWindow();
-    }
+	}
+
+	closeTranslationWindow() {
+		this.page.closeTranslationWindow();
+	}
 
 }
 

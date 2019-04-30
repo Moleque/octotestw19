@@ -65,7 +65,7 @@ class EditorPage extends DefaultPage {
      * Считать CSS параметр
      * @param {string} propertyName 
      */
-	readCSSProperty(propertyName) {
+    readCSSProperty(propertyName) {
         const locator = this.locators.container;
         this.page.waitForVisible(locator);
         return $(locator).getCssProperty(propertyName)['parsed'];
@@ -76,7 +76,7 @@ class EditorPage extends DefaultPage {
      * @param {string} linkUrl 
      * @param {string} linkText 
      */
-	addLink(linkUrl, linkText) {
+    addLink(linkUrl, linkText) {
         const urlLocator = this.locators.linkInputByName('href');
         this.page.waitForVisible(urlLocator);
         $(urlLocator).setValue(linkUrl);
@@ -92,7 +92,7 @@ class EditorPage extends DefaultPage {
     /**
      * Проверка наличия изображения в письме
      */
-	isImage() {
+    isImage() {
         const locator = this.locators.container;
         return this.page.waitForVisible(locator);;
     }

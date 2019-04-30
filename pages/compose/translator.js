@@ -1,18 +1,18 @@
 import DefaultPage from '../default';
 
 class TranslatorPage extends DefaultPage {
-	constructor() {
-		super('letters');
-	}
+    constructor() {
+        super('letters');
+    }
 
-	get locators() {
-        const container = '.compose-app';
-		return {
+    get locators() {
+    const container = '.compose-app';
+        return {
             container,
             closeButton: () => container + ` div[class^="cancelTranslation--"]`,
             containerByName: (containerName) => container + ` div[class^="${containerName}Container--"]`,
             scrollByName: (scrollName) => container + ` div[class^="${scrollName}Scrollable--"] div`,
-		}
+        }
     }
 
     /**
