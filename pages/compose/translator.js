@@ -6,9 +6,9 @@ class TranslatorPage extends DefaultPage {
     }
 
     get locators() {
-    const container = '.compose-app';
+        const container = '.compose-app';
         return {
-            container,
+        container,
             closeButton: () => container + ` div[class^="cancelTranslation--"]`,
             containerByName: (containerName) => container + ` div[class^="${containerName}Container--"]`,
             scrollByName: (scrollName) => container + ` div[class^="${scrollName}Scrollable--"] div`,

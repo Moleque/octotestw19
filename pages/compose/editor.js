@@ -1,19 +1,19 @@
 import DefaultPage from '../default';
 
 class EditorPage extends DefaultPage {
-	constructor() {
-		super('letters')
-	}
+    constructor() {
+        super('letters')
+    }
 
-	get locators() {
+    get locators() {
         const container = '.compose-app div[tabindex="505"]';
-		return {
+        return {
             container,
             linkInputByName: (inputName) => `.compose-app div[class^="editable-container-"] input[name="${inputName}"]`,
             linkButtonByType: (buttonType) => `.compose-app div[class^="editable-container-"] button[type="${buttonType}"]`,
             editorImage: container + ` img`,
-		}
-	}
+        }
+    }
 
     /**
      * Написание текста письма
@@ -83,7 +83,7 @@ class EditorPage extends DefaultPage {
         const textLocator = this.locators.linkInputByName('text');
         this.page.waitForVisible(textLocator);
         $(textLocator).setValue(linkText);
-        
+
         const buttonLocator = this.locators.linkButtonByType('submit');
         this.page.waitForVisible(buttonLocator);
         this.page.click(buttonLocator);
