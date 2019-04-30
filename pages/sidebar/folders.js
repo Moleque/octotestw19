@@ -1,5 +1,15 @@
 import DefaultPage from '../default';
 
+const href = {
+	'Входящие': '/inbox/',
+	'Социальные сети': '/social/',
+	'Рассылки': '/newsletters/',
+	'Отправленные': '/sent/',
+	'Черновики': '/drafts/',
+	'Спам': '/spam/',
+	'Корзина': '/trash/',
+};
+
 class FoldersPage extends DefaultPage {
 	constructor() {
 		super('letters')
@@ -9,35 +19,7 @@ class FoldersPage extends DefaultPage {
 		const container = '.nav-folders';
 		return {
 			container,
-			folderByName: (folderName) => {
-				let folder = ' ';
-				switch (folderName) {
-					case 'Входящие':
-						folder += 'a[href="/inbox/"]';
-						break;
-					case 'Социальные сети':
-						folder += 'a[href="/social/"]';
-						break;
-					case 'Рассылки':
-						folder += 'a[href="/newsletters/"]';
-						break;
-					case 'Отправленные':
-						folder += 'a[href="/sent/"]';
-						break;
-					case 'Черновики':
-						folder += 'a[href="/drafts/"]';
-						break;
-					case 'Спам':
-						folder += 'a[href="/spam/"]';
-						break;
-					case 'Корзина':
-						folder += 'a[href="/trash/"]';
-						break;
- 					default:
-						throw new Error('unknown folder');
-				}
-				return container + ' ' + folder;
-			}
+			folderByName: (folderName) => container + ` a[href="${href[folderName]}"]`,
 		}
 	}
 

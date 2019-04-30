@@ -6,22 +6,22 @@ class Layout extends DefaultPage {
 	}
 
 	get locators() {
-		const container = '.application ';
-		const sideBar = container + ' .sidebar';
-		const dropDown = sideBar + ' .settings';
-		const dropDownButton = dropDown + ' .button2__ico';
-		const dropDownList = dropDown + ' .list';
-		const layoutSwitch = dropDownList + ' :nth-child(3)';
-		const paneCheckbox = layoutSwitch + ' .b-checkbox';
-		return {
-			container,
-			sideBar,
-			dropDown,
-			dropDownButton,
-			dropDownList,
-			layoutSwitch,
-			paneCheckbox
-		}
+        const container = '.application ';
+        const sideBar = container + ' .sidebar';
+        const dropDown = sideBar + ' .settings';
+        const dropDownButton = dropDown + ' .button2__ico';
+        const dropDownList = dropDown + ' .list';
+        const layoutSwitch = dropDownList + ' :nth-child(3)';
+        const paneCheckbox = layoutSwitch + ' .b-checkbox';
+        return {
+            container,
+            sideBar,
+            dropDown,
+            dropDownButton,
+            dropDownList,
+            layoutSwitch,
+            paneCheckbox
+        }
 	}
 
 	toggleDropdownButton() {

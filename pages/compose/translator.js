@@ -2,7 +2,7 @@ import DefaultPage from '../default';
 
 class TranslatorPage extends DefaultPage {
 	constructor() {
-		super('letters')
+		super('letters');
 	}
 
 	get locators() {
@@ -22,7 +22,6 @@ class TranslatorPage extends DefaultPage {
     readText(scrollName) {
         const locator = this.locators.scrollByName(scrollName);
         this.page.waitForVisible(locator);
-        // дождаться появления перевода
         return $(locator).getText();
     }
 

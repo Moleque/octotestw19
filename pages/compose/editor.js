@@ -11,7 +11,7 @@ class EditorPage extends DefaultPage {
             container,
             linkInputByName: (inputName) => `.compose-app div[class^="editable-container-"] input[name="${inputName}"]`,
             linkButtonByType: (buttonType) => `.compose-app div[class^="editable-container-"] button[type="${buttonType}"]`,
-            editorImage: () => container + ` img`
+            editorImage: container + ` img`,
 		}
 	}
 
