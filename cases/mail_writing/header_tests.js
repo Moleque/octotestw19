@@ -14,8 +14,6 @@ describe('Тестирование шапки в написании письма
 
 	before(() => {
 		main.open('https://mail.ru');
-		process.env.LOGIN = 'test.zharkikh';
-		process.env.PASSWORD = 'TPtesting';
 		main.login(process.env.LOGIN, process.env.PASSWORD);
 		layout.setPaneAndSize(3);
 
