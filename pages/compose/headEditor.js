@@ -17,6 +17,8 @@ class HeadEditorPage extends DefaultPage {
 
             receiverContainer: () => containerHead + ` div[tabindex="-1"] div[class^=container-] div[class^=container-]`,
             copyHiddenContainer: () => containerHead + ` div[class^=wrap-] div[tabindex="-1"] div[class^=container-] div[class^=container-]`,
+
+            adressError: () => containerHead + ` div[class^="rowError-"]`
         }
     }
 
@@ -60,7 +62,7 @@ class HeadEditorPage extends DefaultPage {
         return $(locator).getAttribute("class");
 
     }
-//------------
+
     readHiddenFieldHtmlContent() {
         const locator = this.locators.copyHiddenContainer();
         this.page.waitForVisible(locator);
@@ -69,6 +71,12 @@ class HeadEditorPage extends DefaultPage {
 
     readThemeFieldHtmlContent() {
         const locator = this.locators.inputThemeField();
+        this.page.waitForVisible(locator);
+        return $(locator).getHTML(false);
+    }
+
+    readAddressErrorHtml() {
+        const locator = this.locators.adressError();
         this.page.waitForVisible(locator);
         return $(locator).getHTML(false);
     }

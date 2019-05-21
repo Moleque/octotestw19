@@ -9,12 +9,8 @@ class HeaderPage extends DefaultPage {
 		const container = '.compose-app div[class^="contactsControls-"]';
 		return {
 			container,
-			// buttonByName: (buttonName) => container + ` button[value="${buttonName}"]`,
-			// buttonByName: (buttonName) => container + ` button[tabindex^="7"] div[class^="text-" value="${buttonName}"]`,
 			copyButton: () => container + ` button[tabindex="720"]`,
 			hiddenButton: () => container + ` button[tabindex="730"]`,
-
-
 		}
 	}
 
