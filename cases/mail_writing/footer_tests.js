@@ -34,12 +34,12 @@ describe('Тестирование подвала в написании пись
 		footer.checkSaveButton();
 	});
 
-	it('Тестирование отправки письма с корректным Email адресом', () => {
-		footer.checkSendButtonEmail();
-	});
-
 	it('Тестирование отмены написания письма', () => {
 		footer.checkCancelButton();
+	});
+	
+	it('Тестирование отправки письма с корректным Email адресом', () => {
+		footer.checkSendButtonEmail();
 	});
 
 });

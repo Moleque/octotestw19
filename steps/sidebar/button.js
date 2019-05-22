@@ -9,7 +9,10 @@ class ButtonSteps extends DefaultSteps {
 	clickButton(buttonName) {
 		this.page.clickButton(buttonName);
 	}
-	
+	clickButtonWriteMail() {
+		this.page.clickButtonWriteMail()
+	}
+
 }
 
 export default new ButtonSteps();

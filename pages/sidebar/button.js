@@ -9,7 +9,8 @@ class ButtonPage extends DefaultPage {
 		const container = '.sidebar';
 		return {
 			container,
-			buttonByName: (buttonName) => container + ` span[title="${buttonName}"]`
+			buttonByName: (buttonName) => container + ` span[title="${buttonName}"]`,
+			buttonWriteMail: container + ` span[class^=compose-button__]`
 		}
 	}
 
@@ -19,6 +20,12 @@ class ButtonPage extends DefaultPage {
 	 */
 	clickButton(buttonName) {
 		const locator = this.locators.buttonByName(buttonName);
+		this.page.waitForVisible(locator);
+		this.page.click(locator);
+	}
+
+	clickButtonWriteMail() {
+		const locator = this.locators.buttonWriteMail;
 		this.page.waitForVisible(locator);
 		this.page.click(locator);
 	}
