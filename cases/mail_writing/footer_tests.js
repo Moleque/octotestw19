@@ -4,6 +4,7 @@ import footer from '../../steps/compose/footer';
 import layout from '../../steps/layout'
 import editor from '../../pages/compose/editor';
 import headEditor from '../../pages/compose/headEditor';
+import { doesNotReject } from 'assert';
 
 
 // тесты cтилей текста
