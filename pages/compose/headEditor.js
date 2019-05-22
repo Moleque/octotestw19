@@ -10,105 +10,105 @@ class HeadEditorPage extends DefaultPage {
         const containerHead = '.compose-app div[class^="head_container-"]';
         return {
             container,
-            inputToField: () => containerHead + ` input[tabindex="100"]`,
-            inputCopyField: () => containerHead + ` div[class^="contactsContainer-"] input[tabindex="200"]`,
-            inputHiddenField: () => containerHead + ` div[class^="contactsContainer-"] input[tabindex="300"]`,
-            inputThemeField: () => container + ` div[class^="subject__container-"] input[tabindex="400"]`,
+            inputToField: containerHead + ` input[tabindex="100"]`,
+            inputCopyField: containerHead + ` div[class^="contactsContainer-"] input[tabindex="200"]`,
+            inputHiddenField: containerHead + ` div[class^="contactsContainer-"] input[tabindex="300"]`,
+            inputThemeField: container + ` div[class^="subject__container-"] input[tabindex="400"]`,
 
-            receiverContainer: () => containerHead + ` div[tabindex="-1"] div[class^=container-] div[class^=container-]`,
-            copyHiddenContainer: () => containerHead + ` div[class^=wrap-] div[tabindex="-1"] div[class^=container-] div[class^=container-]`,
+            receiverContainer: containerHead + ` div[tabindex="-1"] div[class^=container-] div[class^=container-]`,
+            copyHiddenContainer: containerHead + ` div[class^=wrap-] div[tabindex="-1"] div[class^=container-] div[class^=container-]`,
 
-            adressError: () => containerHead + ` div[class^="rowError-"]`
+            adressError: containerHead + ` div[class^="rowError-"]`
         }
     }
 
     // Ввод в поле "Кому"
     writeReceiverFieldText(text) {
-        const locator = this.locators.inputToField();
+        const locator = this.locators.inputToField;
         this.page.waitForVisible(locator);
         $(locator).addValue(text);
     }
 
     // Ввод в поле "Тема"
     writeThemeFieldText(text) {
-        const locator = this.locators.inputThemeField();
+        const locator = this.locators.inputThemeField;
         this.page.waitForVisible(locator);
         $(locator).addValue(text);
     }
 
     // Ввод в поле "Копия"
     writeCopyFieldText(text) {
-        const locator = this.locators.inputCopyField();
+        const locator = this.locators.inputCopyField;
         this.page.waitForVisible(locator);
         $(locator).addValue(text);
     }
 
     // Ввод в поле "Скрытая"
     writeHiddenFieldText(text) {
-        const locator = this.locators.inputHiddenField();
+        const locator = this.locators.inputHiddenField;
         this.page.waitForVisible(locator);
         $(locator).addValue(text);
     }
 
     readReceiverFieldHtmlContent() {
-        const locator = this.locators.receiverContainer();
+        const locator = this.locators.receiverContainer;
         this.page.waitForVisible(locator);
         return $(locator).getAttribute("class");
     }
 
     readCopyFieldHtmlContent() {
-        const locator = this.locators.copyHiddenContainer();
+        const locator = this.locators.copyHiddenContainer;
         this.page.waitForVisible(locator);
         return $(locator).getAttribute("class");
 
     }
 
     readHiddenFieldHtmlContent() {
-        const locator = this.locators.copyHiddenContainer();
+        const locator = this.locators.copyHiddenContainer;
         this.page.waitForVisible(locator);
         return $(locator).getAttribute("class");
     }
 
     readThemeFieldHtmlContent() {
-        const locator = this.locators.inputThemeField();
+        const locator = this.locators.inputThemeField;
         this.page.waitForVisible(locator);
         return $(locator).getHTML(false);
     }
 
     readAddressErrorHtml() {
-        const locator = this.locators.adressError();
+        const locator = this.locators.adressError;
         this.page.waitForVisible(locator);
         return $(locator).getHTML(false);
     }
 
     // Очистить содержимое поля "Кому"
     clearReceiverFieldText() {
-        const locator = this.locators.inputToField();
+        const locator = this.locators.inputToField;
         this.page.waitForVisible(locator);
         $(locator).setValue('\b');
     }
 
     // Очистить содержимое поля "Копия"
     clearCopyFieldText() {
-        const locator = this.locators.inputCopyField();
+        const locator = this.locators.inputCopyField;
         this.page.waitForVisible(locator);
         $(locator).setValue('\b');
     }
 
     // Очистить содержимое поля "Скрытая"
     clearHiddenFieldText() {
-        const locator = this.locators.inputHiddenField();
+        const locator = this.locators.inputHiddenField;
         this.page.waitForVisible(locator);
         $(locator).setValue('\b');
     }
 
     // Очистить содержимое поля "Тема"
     clearThemeFieldText() {
-        const locator = this.locators.inputThemeField();
+        const locator = this.locators.inputThemeField;
         this.page.waitForVisible(locator);
         $(locator).setValue('\b');
     }
 
 }
 
-export default new HeadEditorPage();
+export default new HeadEditorPage;

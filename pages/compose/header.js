@@ -9,19 +9,19 @@ class HeaderPage extends DefaultPage {
 		const container = '.compose-app div[class^="contactsControls-"]';
 		return {
 			container,
-			copyButton: () => container + ` button[tabindex="720"]`,
-			hiddenButton: () => container + ` button[tabindex="730"]`,
+			copyButton: container + ` button[tabindex="720"]`,
+			hiddenButton: container + ` button[tabindex="730"]`,
 		}
 	}
 
 	clickButtonCopy(){
-		const locator = this.locators.copyButton();
+		const locator = this.locators.copyButton;
 		this.page.waitForVisible(locator);
 		this.page.click(locator);
 	}
 
 	clickButtonHidden(){
-		const locator = this.locators.hiddenButton();
+		const locator = this.locators.hiddenButton;
 		this.page.waitForVisible(locator);
 		this.page.click(locator);
 	}
