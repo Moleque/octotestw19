@@ -3,6 +3,7 @@ import page from '../../pages/compose/footer';
 import editor from '../../pages/compose/editor';
 import headEditor from '../../pages/compose/headEditor';
 import assert from 'assert';
+import but from '../../pages/sidebar/button';
 
 const button = {
 	send: 570,
@@ -38,17 +39,18 @@ class FooterSteps extends DefaultSteps {
 		headEditor.writeReceiverFieldText(test.wrongMail);
 		this.page.clickButton(button.send);
 		this.page.clickFixMail();
-		// const readedContent = headEditor.readAddressErrorHtml();
 	}
 
 	checkCancelButton() {
 		this.page.clickButton(button.cancel);
+		this.but.clickButton('Написать письмо');
 	}
 
 	checkSaveButton() {
 		this.page.clickButton(button.save);
+		this.page.clickNotifyMessage();
 	}
-	
+
 }
 
 export default new FooterSteps();

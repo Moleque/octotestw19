@@ -92,7 +92,7 @@ class EditorPage extends DefaultPage {
     /**
      * Проверка наличия изображения в письме
      */
-    isImage() {
+    hasImage() {
         const locator = this.locators.container;
         return this.page.waitForVisible(locator);;
     }

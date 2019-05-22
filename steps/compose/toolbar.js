@@ -78,8 +78,8 @@ class ToolbarSteps extends DefaultSteps {
 
 	checkImageAdding(imagePath) {
 		this.page.addImageToEditor(imagePath);
-		const isImage = editor.isImage();
-		assert.equal(isImage, true);
+		const hasImage = editor.hasImage();
+		assert.equal(hasImage, true);
 	}
 
 	checkTranslator(testText, translation) {
