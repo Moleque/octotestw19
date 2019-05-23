@@ -3,7 +3,7 @@ import page from '../../pages/compose/footer';
 import editor from '../../pages/compose/editor';
 import headEditor from '../../pages/compose/headEditor';
 import assert from 'assert';
-import but from '../sidebar/button';
+import clickbutton from '../sidebar/button';
 
 const button = {
 	send: 570,
@@ -43,8 +43,7 @@ class FooterSteps extends DefaultSteps {
 
 	checkCancelButton() {
 		this.page.clickButton(button.cancel);
-		// but.clickButton('Написать письмо');
-		but.clickButtonWriteMail();
+		clickbutton.clickButtonWriteMail();
 	}
 
 	checkSaveButton() {

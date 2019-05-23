@@ -60,12 +60,6 @@ class BottomPage extends DefaultPage {
 		this.page.waitForVisible(locator);
 		this.page.click(locator);
 	}
-
-	// readNotifyMessageHtml() {
-	// 	const locator = this.locators.notifyMessage;
-	// 	this.page.waitForVisible(locator);
-	// 	return $(locator).getHTML(false);
-	// }
 }
 
 export default new BottomPage();
